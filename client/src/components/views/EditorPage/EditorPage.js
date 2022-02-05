@@ -7,7 +7,7 @@ function LoginPage(props) {
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
-  const [Name, setName] = useState("name");
+  const [Name] = useState("name");
   const [Title, setTitle] = useState("");
   const [Content, setContent] = useState("");
 
@@ -69,4 +69,5 @@ function LoginPage(props) {
     </div>
   );
 }
+
 export default LoginPage;
