@@ -20,6 +20,10 @@ mongoose
 
 app.get("/", (req, res) => res.send("Hello world!"));
 
+app.get("/api/hello", (req, res) => {
+  res.send("server connected...");
+});
+
 app.post("/api/users/register", (req, res) => {
   const user = new User(req.body);
 

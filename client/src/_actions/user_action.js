@@ -3,7 +3,7 @@ import { AUTH_USER, LOGIN_USER, POST_MEMO, REGISTER_USER } from "./types";
 
 export function loginUser(dataTosubmit) {
   const request = axios
-    .post("/api/user/login", dataTosubmit)
+    .post("/api/users/login", dataTosubmit)
     .then((response) => response.data);
 
   return {
@@ -14,7 +14,7 @@ export function loginUser(dataTosubmit) {
 
 export function registerUser(dataTosubmit) {
   const request = axios
-    .post("/api/user/register", dataTosubmit)
+    .post("/api/users/register", dataTosubmit)
     .then((response) => response.data);
 
   return {
@@ -25,7 +25,7 @@ export function registerUser(dataTosubmit) {
 
 export function postMemo(dataTosubmit) {
   const request = axios
-    .post("/api/user/postMemo", dataTosubmit)
+    .post("/api/users/postMemo", dataTosubmit)
     .then((response) => response.data);
 
   return {
@@ -35,7 +35,9 @@ export function postMemo(dataTosubmit) {
 }
 
 export function auth() {
-  const request = axios.get("/api/user/auth").then((response) => response.data);
+  const request = axios
+    .get("/api/users/auth")
+    .then((response) => response.data);
 
   return {
     type: AUTH_USER,

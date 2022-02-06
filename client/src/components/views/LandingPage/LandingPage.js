@@ -9,7 +9,7 @@ function LandingPage() {
 
   let navigate = useNavigate();
   const onClickHandler = () => {
-    axios.get("api/user/logout").then((response) => {
+    axios.get("api/users/logout").then((response) => {
       if (response.data.success) {
         navigate("/login");
       } else {
