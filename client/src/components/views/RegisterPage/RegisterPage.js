@@ -11,6 +11,7 @@ function RegisterPage() {
   const [Name, setName] = useState("");
   const [Password, setPassword] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
+  const [NickName, setNickName] = useState("");
 
   const onEmailHandler = (event) => {
     setEmail(event.currentTarget.value);
@@ -24,6 +25,10 @@ function RegisterPage() {
   const onConfirmPasswordHandler = (event) => {
     setConfirmPassword(event.currentTarget.value);
   };
+  const onNickNameHandler = (event) => {
+    setNickName(event.currentTarget.value);
+  };
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
@@ -64,6 +69,8 @@ function RegisterPage() {
         <input type="email" value={Email} onChange={onEmailHandler} />
         <label>Name</label>
         <input type="text" value={Name} onChange={onNameHandler} />
+        <label>Nickname</label>
+        <input type="text" value={NickName} onChange={onNickNameHandler} />
         <label>Password</label>
         <input type="password" value={Password} onChange={onPasswordHandler} />
         <label>Confirm Password</label>
