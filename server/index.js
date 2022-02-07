@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { auth } = require("./middleware/auth");
 const { User } = require("./models/User");
+const { Board } = require("./models/Board");
 const config = require("./config/key");
 const cookieParser = require("cookie-parser");
 
@@ -77,6 +78,17 @@ app.get("/api/users/logout", auth, (req, res) => {
   User.findOneAndUpdate({ _id: req.user._id }, { token: "" }, (err, user) => {
     if (err) return res.json({ success: false, err });
     return res.status(200).send({
+      success: true,
+    });
+  });
+});
+
+app.post("/api/board/write", (req, res) => {
+  const data = new Board(req.body);
+
+  data.save((err, info) => {
+    if (err) return res.json({ success: false, err });
+    return res.status(200).json({
       success: true,
     });
   });
