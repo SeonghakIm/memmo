@@ -25,7 +25,7 @@ export function registerUser(dataTosubmit) {
 
 export function postMemo(dataTosubmit) {
   const request = axios
-    .post("/api/users/postMemo", dataTosubmit)
+    .post("/api/board/write", dataTosubmit)
     .then((response) => response.data);
 
   return {
