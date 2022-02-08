@@ -7,7 +7,7 @@ function LoginPage(props) {
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
-  const [Name] = useState("name");
+  const [Name] = useState("");
   const [Title, setTitle] = useState("");
   const [Content, setContent] = useState("");
 

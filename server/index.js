@@ -87,12 +87,21 @@ app.post("/api/board/write", (req, res) => {
   const data = new Board(req.body);
 
   data.save((err, info) => {
-    if (err) return res.json({ success: false, err });
+    if (err) return res.json({ postSuccess: false, err });
     return res.status(200).json({
       postSuccess: true,
     });
   });
 });
 
+app.get("/api/board/board", (req, res) => {
+  Board.find({}, (err, docs) => {
+    if (err) return res.json({ success: false, err });
+    return res.status(200).json({
+      success: true,
+      docs: docs,
+    });
+  });
+});
 const port = 5000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

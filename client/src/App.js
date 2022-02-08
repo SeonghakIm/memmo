@@ -11,8 +11,10 @@ import LoginPage from "./components/views/LoginPage/LoginPage";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import EditorPage from "./components/views/EditorPage/EditorPage";
 import Auth from "./hoc/auth";
+import Board from "./components/views/Board/Board";
 
 function App() {
+  const NewBoard = Auth(Board, null);
   const NewLandingPage = Auth(LandingPage, null);
   const NewLoginPage = Auth(LoginPage, false);
   const NewRegisterPage = Auth(RegisterPage, false);
@@ -30,6 +32,7 @@ function App() {
         <Route exact path="/login" element={<NewLoginPage />} />
         <Route exact path="/register" element={<NewRegisterPage />} />
         <Route exact path="/editor" element={<EditorPage />} />
+        <Route exact path="/board" element={<NewBoard />} />
       </Routes>
     </Router>
   );
